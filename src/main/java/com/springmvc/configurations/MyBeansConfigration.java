@@ -1,21 +1,23 @@
 package com.springmvc.configurations;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @Configuration
 @ComponentScan("com.springmvc")
-public class MyBeansConfigration implements WebApplicationInitializer{
+public class MyBeansConfigration{
 
-	public void onStartup(ServletContext servletContext) throws ServletException {
-		
-		
+	//Configure ViewResolver
+	@Bean
+	public InternalResourceViewResolver viewResolver()
+	{
+		InternalResourceViewResolver vr =new InternalResourceViewResolver();
+		vr.setPrefix("/WEB-INF/views/");
+		vr.setSuffix(".jsp");
+		return vr;
 	}
-
 }
