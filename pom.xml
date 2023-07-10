@@ -17,5 +17,26 @@
   </dependencies>
   <build>
     <finalName>SpringMvcNoXmlFullControl</finalName>
+    <plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<!--For "JAVA BASED CONFIGRATION" its is require to have 1.7 and above -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<!--To avoid error when we delete WEB.XML file-->
+				</configuration>
+			</plugin>
+		</plugins>
   </build>
 </project>
