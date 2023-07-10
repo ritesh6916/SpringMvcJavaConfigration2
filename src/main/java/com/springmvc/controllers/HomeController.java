@@ -7,10 +7,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
 
-	@ResponseBody
-	@RequestMapping("test")
+	@RequestMapping("/home")
 	public String homeController()
 	{
 		return "Home";
+	}
+	
+	@ResponseBody
+	@RequestMapping("test")
+	public String homeControllertest()
+	{
+		return "Testing SuccessFul...";
 	}
 }
